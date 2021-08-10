@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+
+        <title>Best Recipes</title>
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+    </head>
+
+    <body>
+
+        <h1 class = "centered background_1">Recipe Finder</h1>
+
+        <h1 class = "centered background_2">Welcome! This site will help you find the best recipe for whatever dish you want to make.</h2>
+        
+        <br>
+
+        <form action = "/recipes" method = "get" class = "centered large_font" onsubmit="input_checker()">
+            What would you like to make? 
+            <input name = "dishname" type = "text" placeholder = "Enter dish here" id="dishname">
+
+            <br>
+            <br>
+
+            How many recipes would you like to compare between? A lower number would result in a faster search
+            <input name = "samplesize" type = "text" placeholder = "Enter number of recipes here" id="samplesize">
+            
+            <br>
+
+            <input type = "submit" value = "Submit" class = "submit"> 
+
+        </form>
+
+        <script>
+
+            function input_checker(){
+
+                var dishname = document.getElementById("dishname").value;
+                var samplesize = document.getElementById("samplesize").value;
+
+                if (dishname == "" && (isNaN(samplesize) || samplesize == "")){
+                    alert("Please enter a dish name and a number for the sample size textbox")
+                } else if (dishname == "") {
+                    alert("Please enter a dish name")
+                } else if (isNaN(samplesize) || samplesize == "") {
+                    alert("Please the number of recipes you would like to compare")
+                } else {
+                    alert("Please wait, we're finding a recipe for you")
+                }
+
+            }
+
+        </script>
+
+        <br>
+
+        <table class = "centered_table">
+            <tr>
+                <td><img src="{{ url_for('static',filename='Lasagna.jpg') }}" alt = "Lasagna" width = "400" height = "300"></td>
+                <td><img src="{{ url_for('static',filename='Noodles.jpg') }}" alt = "Noodles" width = "400" height = "300"></td>
+                <td><img src="{{ url_for('static',filename='Pie.jpg') }}" alt = "Pie" width = "400" height = "300"></td>
+            </tr>
+        </table>
+        
+    </body>
+</html> 

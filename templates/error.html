@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <title>Error Page</title>
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+    </head>
+
+    <body>
+
+        <h1 class = "centered background_1">Recipe Finder</h1>
+
+        <h1 class = "centered background_2">Welcome! This site will help you find the best recipe for whatever dish you want to make.</h2>
+        
+        <br>
+
+        <p class = "centered large_font">An error has occured! Perhaps there aren't any recipes for your dish! </p>
+
+        <br> 
+
+        <p class = "centered large_font">Would you like to search for another recipe? <a href = "/"> Click Here To Find Another Recipe </a></p>
+
+        <table class = "centered_table">
+            <tr>
+                <td><img src="{{ url_for('static',filename='Lasagna.jpg') }}" alt = "Lasagna" width = "400" height = "300"></td>
+                <td><img src="{{ url_for('static',filename='Noodles.jpg') }}" alt = "Noodles" width = "400" height = "300"></td>
+                <td><img src="{{ url_for('static',filename='Pie.jpg') }}" alt = "Pie" width = "400" height = "300"></td>
+            </tr>
+        </table>
+
+    </body>
+
+</html> 
